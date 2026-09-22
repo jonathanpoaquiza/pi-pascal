@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8f7f3;
+  --foreground: #102c4c;
+  --brand-yellow: #f2c230;
+  --brand-blue: #123f68;
+  --brand-blue-dark: #082b4f;
+  --brand-sky: #dce8ed;
+  --brand-soft: #eef3f3;
 }
 
 @theme inline {
@@ -12,15 +17,57 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(180deg, #fbfaf7 0%, #eef3f3 100%);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  transition: color 0.2s ease;
+}
+
+img {
+  display: block;
+}
+
+/* Keep legacy utility classes aligned with the brand palette. */
+.bg-blue-50 { background-color: #eef3f3 !important; }
+.bg-blue-100 { background-color: #dce8ed !important; }
+.bg-blue-400 { background-color: #b08a15 !important; }
+.bg-blue-600 { background-color: #123f68 !important; }
+.bg-blue-700 { background-color: #0d3456 !important; }
+.bg-blue-800 { background-color: #082b4f !important; }
+.bg-blue-900 { background-color: #061f39 !important; }
+.text-blue-600 { color: #123f68 !important; }
+.text-blue-700 { color: #0d3456 !important; }
+.text-blue-800, .text-blue-900 { color: #082b4f !important; }
+.text-blue-100 { color: #e7eef0 !important; }
+.border-blue-200 { border-color: #c8d8dc !important; }
+.border-blue-600 { border-color: #123f68 !important; }
+.hover\:bg-blue-700:hover { background-color: #0d3456 !important; }
+.hover\:bg-blue-500:hover { background-color: #9b7712 !important; }
+.hover\:text-blue-600:hover, .hover\:text-blue-700:hover { color: #b08a15 !important; }
+.focus\:ring-blue-600:focus { --tw-ring-color: #b08a15 !important; }
+
+* {
+  box-sizing: border-box;
+}
+
+:focus-visible {
+  outline: 3px solid #d09f12;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(244, 197, 66, 0.35);
 }
