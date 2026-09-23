@@ -1,6 +1,9 @@
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/interactions';
 const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3-flash-preview';
 
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 type ChatMessage = {
   role?: string;
   content?: string;
@@ -45,7 +48,7 @@ export async function POST(request: Request) {
   try {
     const body = (await request.json()) as { messages?: ChatMessage[] };
     const messages = body.messages || [];
-    const input = messages
+    const input = messages.slice(-8)
       .filter((message) => message.content?.trim())
       .map((message) => `${message.role === 'assistant' ? 'Tutor IA' : 'Estudiante'}: ${message.content?.trim()}`)
       .join('\n\n');
@@ -63,7 +66,17 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         model: GEMINI_MODEL,
-        input: `Eres un tutor académico de Pi Pascal. Responde en español, con claridad y de forma útil para estudiantes.\n\n${input}`,
+        input: `Eres el tutor académico de Pi Pascal. Responde únicamente sobre los cursos, áreas académicas y servicios educativos de Pi Pascal.
+
+Reglas de respuesta:
+- Responde siempre en español.
+- Sé breve: máximo 80 palabras y 2 párrafos cortos.
+- Ve directamente a la respuesta y evita explicaciones repetidas.
+- No uses Markdown, asteriscos, almohadillas, listas, emojis ni símbolos decorativos.
+- Si la pregunta no está relacionada con Pi Pascal o la educación, responde: "Puedo ayudarte únicamente con los cursos y servicios académicos de Pi Pascal."
+
+Historial reciente:
+${input}`,
         stream: true,
       }),
     });

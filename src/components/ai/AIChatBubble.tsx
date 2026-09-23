@@ -12,6 +12,18 @@ type ServerEvent = {
   message?: string;
 };
 
+function formatAssistantText(content: string) {
+  return content
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/^\s*[#>*]+\s?/gm, '')
+    .replace(/^\s*[-+]\s+/gm, '')
+    .replace(/\*{1,3}([^*]+)\*{1,3}/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
 function Icon({ name }: { name: 'chat' | 'close' | 'send' }) {
   if (name === 'close') {
     return (
@@ -65,7 +77,7 @@ export function AIChatBubble() {
         signal: abortController.current.signal,
       });
 
-      if (!response.ok || !response.body) {
+      if (!response.body) {
         throw new Error('El servicio de IA no está disponible.');
       }
 
@@ -98,6 +110,10 @@ export function AIChatBubble() {
         if (done) break;
       }
       if (buffer.trim()) processEvent(buffer);
+
+      if (!response.ok && !error) {
+        throw new Error('El servicio de IA no está disponible.');
+      }
     } catch (requestError) {
       if ((requestError as Error).name !== 'AbortError') {
         setError(requestError instanceof Error ? requestError.message : 'No se pudo conectar con el asistente.');
@@ -138,7 +154,11 @@ export function AIChatBubble() {
             {messages.map((message, index) => (
               <div key={`${message.role}-${index}`} className={`max-w-[88%] rounded-2xl px-4 py-3 text-sm ${message.role === 'user' ? 'ml-auto rounded-br-sm bg-[#123f68] text-white' : 'mr-auto rounded-bl-sm border border-[#dce8ed] bg-white text-[#24445f]'}`}>
                 <p className="mb-1 text-[10px] font-black uppercase tracking-[0.12em] opacity-65">{message.role === 'user' ? 'Tú' : 'Tutor IA'}</p>
-                {message.content || (isLoading && index === messages.length - 1 ? <span className="animate-pulse">Escribiendo...</span> : null)}
+                {message.content ? (
+                  <p className={message.role === 'assistant' ? 'whitespace-pre-line text-justify leading-relaxed' : 'whitespace-pre-line'}>
+                    {message.role === 'assistant' ? formatAssistantText(message.content) : message.content}
+                  </p>
+                ) : (isLoading && index === messages.length - 1 ? <span className="animate-pulse">Escribiendo...</span> : null)}
               </div>
             ))}
             {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-xs text-red-700">{error}</p>}

@@ -39,9 +39,13 @@ vercel
 En las settings de tu proyecto en Vercel, agrega:
 
 ```
-NEXT_PUBLIC_API_URL = https://tu-api.com
-NEXT_PUBLIC_STRIPE_KEY = pk_live_xxxxx
+GEMINI_API_KEY = tu_api_key_de_google_ai_studio
+GEMINI_MODEL = gemini-3-flash-preview
 ```
+
+Configúralas en el entorno **Production** (y también en Preview si pruebas despliegues de preview). Después de guardarlas, crea un nuevo deployment: Vercel solo inyecta las variables en nuevas ejecuciones.
+
+No subas `.env.local` al repositorio. La ruta `/api/chat` usa `GEMINI_API_KEY` únicamente en el servidor y el navegador nunca recibe esa clave.
 
 ### Optimization Settings
 
@@ -103,8 +107,10 @@ vercel builds
 - Verifica que no hay errores de TypeScript
 
 ### Error: Variables de entorno
-- Confirma que las variables están configuradas en Vercel Settings
-- Usa `NEXT_PUBLIC_` para variables que necesitan estar del lado del cliente
+- Confirma que `GEMINI_API_KEY` está configurada en Vercel Settings → Environment Variables
+- Comprueba que está marcada para el entorno donde desplegaste: Production, Preview o Development
+- Después de cambiarla, ejecuta un nuevo deployment
+- No uses `NEXT_PUBLIC_GEMINI_API_KEY`: ese prefijo expondría la clave al navegador
 
 ### Rendimiento lento
 - Revisa Analytics en Vercel
