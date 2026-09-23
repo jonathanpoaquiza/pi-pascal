@@ -11,23 +11,6 @@ export function Footer() {
     <footer className="bg-[#0a2340] text-slate-200 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* Brand */}
-          <div>
-            <div className="mb-4">
-              <Link href="/" className="inline-flex items-center">
-                <Image
-                  src="/images/logo.png"
-                  alt="Logo de π Pascal"
-                  width={170}
-                  height={48}
-                  className="h-10 w-auto object-contain"
-                />
-              </Link>
-            </div>
-            <p className="text-sm text-slate-300 leading-relaxed">
-              Refuerzo académico para ciencias exactas, sociales, naturales, lengua y literatura y más.
-            </p>
-          </div>
 
           {/* Cursos */}
           <div>

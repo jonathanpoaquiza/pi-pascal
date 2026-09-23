@@ -45,13 +45,13 @@ export default function RegisterPage() {
     formState.agreeTerms;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f8f7f3] to-[#dce8ed] py-12 px-4 flex items-center justify-center">
+    <div className="flex min-h-screen items-center justify-center bg-[linear-gradient(135deg,#f8f7f3_0%,#eef3f3_55%,#dce8ed_100%)] px-4 py-12">
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="text-4xl">π</div>
-            <h1 className="text-3xl font-bold text-gray-900">Pascal</h1>
+            <h1 className="text-3xl font-black text-[#082b4f]">Pascal</h1>
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Crear cuenta</h2>
           <p className="text-gray-600">
@@ -60,7 +60,7 @@ export default function RegisterPage() {
         </div>
 
         {/* Card */}
-        <div className="bg-white rounded-lg shadow-lg p-8">
+        <div className="site-panel p-8">
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Name */}
             <div>
@@ -74,7 +74,7 @@ export default function RegisterPage() {
                 value={formState.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="site-input"
                 placeholder="Juan Pérez"
               />
             </div>
@@ -91,7 +91,7 @@ export default function RegisterPage() {
                 value={formState.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="site-input"
                 placeholder="tu@email.com"
               />
             </div>
@@ -109,7 +109,7 @@ export default function RegisterPage() {
                   value={formState.password}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  className="site-input"
                   placeholder="Mínimo 8 caracteres"
                 />
                 <button
@@ -137,7 +137,7 @@ export default function RegisterPage() {
                 value={formState.confirmPassword}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="site-input"
                 placeholder="Confirma tu contraseña"
               />
               {formState.password &&

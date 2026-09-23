@@ -24,7 +24,7 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         <h1 className="text-3xl font-bold text-gray-900 mb-4">Curso no encontrado</h1>
         <p className="text-gray-600 mb-8">
-          El curso que buscas no existe o ha sido eliminado.
+            El curso que buscas no existe o ha sido eliminado.
         </p>
         <Button asChild variant="primary">
           <Link href="/cursos">Volver a cursos</Link>
@@ -41,13 +41,13 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
   return (
     <>
       {/* Course Header */}
-      <section className="bg-gray-900 text-white py-12">
+      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_#f2c230_0%,_#f2c230_15%,_#123f68_15%,_#082b4f_100%)] py-14 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-6">
-            <span className="text-sm font-semibold bg-blue-600 px-3 py-1 rounded-full">
+            <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm font-semibold backdrop-blur-sm">
               {course.category}
             </span>
-            <span className="text-sm font-semibold bg-yellow-600 px-3 py-1 rounded-full">
+            <span className="rounded-full bg-[#f2c230] px-3 py-1 text-sm font-semibold text-[#082b4f]">
               {course.level}
             </span>
           </div>
@@ -56,16 +56,16 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
 
           <div className="flex flex-wrap gap-6 text-sm">
             <div>
-              <p className="text-gray-400">Instructor</p>
+              <p className="text-[#b9cbd2]">Instructor</p>
               <p className="font-semibold">{course.instructor}</p>
             </div>
             <div>
-              <p className="text-gray-400">Duración</p>
+              <p className="text-[#b9cbd2]">Duración</p>
               <p className="font-semibold">{course.duration}</p>
             </div>
             {course.rating && (
               <div>
-                <p className="text-gray-400">Calificación</p>
+                <p className="text-[#b9cbd2]">Calificación</p>
                 <p className="font-semibold">
                   {course.rating} <span className="text-yellow-400">★</span>
                 </p>
@@ -73,7 +73,7 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
             )}
             {course.students && (
               <div>
-                <p className="text-gray-400">Estudiantes</p>
+                <p className="text-[#b9cbd2]">Estudiantes</p>
                 <p className="font-semibold">{course.students.toLocaleString()}</p>
               </div>
             )}
@@ -83,7 +83,7 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid gap-6 lg:grid-cols-3">
           {/* Content */}
           <div className="lg:col-span-2">
             {/* Course Image */}
@@ -98,7 +98,7 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
 
             {/* Tabs */}
             <div className="border-b border-gray-200 mb-8">
-              <div className="flex gap-8">
+              <div className="flex gap-6">
                 <button
                   onClick={() => setSelectedTab('overview')}
                   className={`pb-4 font-semibold border-b-2 transition-colors ${
@@ -229,7 +229,7 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-24 bg-gray-50 rounded-lg p-6 border border-gray-200">
+            <div className="site-panel sticky top-24 p-6">
               {/* Price */}
               <div className="mb-6">
                 <p className="text-4xl font-bold text-blue-600">
@@ -290,7 +290,7 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
       {relatedCourses.length > 0 && (
         <section className="bg-gray-50 py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Cursos relacionados</h2>
+            <h2 className="mb-6 text-3xl font-bold text-gray-900">Cursos relacionados</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {relatedCourses.map((course) => (
                 <div key={course.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">

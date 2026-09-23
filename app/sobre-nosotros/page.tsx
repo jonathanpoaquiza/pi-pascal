@@ -1,23 +1,19 @@
 import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
+import { PageHero } from '@/components/layout';
 
 export default function AboutPage() {
   return (
     <>
-      {/* Header Section */}
-      <section className="bg-gradient-to-r from-[#123f68] to-[#082b4f] text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">Sobre π Pascal</h1>
-          <p className="text-xl text-blue-100">
-            Acompañamos tu aprendizaje para comprender, avanzar y crecer
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Sobre π Pascal"
+        description="Acompañamos tu aprendizaje para comprender, avanzar y crecer."
+      />
 
       {/* Mission Vision Values */}
-      <section className="py-20 bg-white">
+      <section className="bg-white py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="mb-8 grid gap-6 md:grid-cols-3">
             {/* Mission */}
             <div className="text-center">
               <div className="text-5xl mb-4">🎯</div>
@@ -49,7 +45,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-20 bg-gray-50">
+      <section className="bg-gray-50 py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Nuestra Historia</h2>
           <div className="prose prose-lg max-w-none">
@@ -70,13 +66,13 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-white">
+      <section className="bg-white py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Nuestro Equipo</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {/* Team Member 1 */}
             <div className="text-center">
-              <div className="w-32 h-32 bg-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
+              <div className="mx-auto mb-4 flex h-32 w-32 items-center justify-center rounded-full bg-[#123f68] text-4xl">
                 👨
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Jonathan Founder</h3>
@@ -88,7 +84,7 @@ export default function AboutPage() {
 
             {/* Team Member 2 */}
             <div className="text-center">
-              <div className="w-32 h-32 bg-green-600 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
+              <div className="mx-auto mb-4 flex h-32 w-32 items-center justify-center rounded-full bg-[#f2c230] text-4xl">
                 👩
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">María García</h3>
@@ -100,7 +96,7 @@ export default function AboutPage() {
 
             {/* Team Member 3 */}
             <div className="text-center">
-              <div className="w-32 h-32 bg-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
+              <div className="mx-auto mb-4 flex h-32 w-32 items-center justify-center rounded-full bg-[#dce8ed] text-4xl">
                 👨
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Carlos López</h3>
@@ -112,7 +108,7 @@ export default function AboutPage() {
 
             {/* Team Member 4 */}
             <div className="text-center">
-              <div className="w-32 h-32 bg-pink-600 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
+              <div className="mx-auto mb-4 flex h-32 w-32 items-center justify-center rounded-full bg-[#b08a15] text-4xl">
                 👩
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Alex Johnson</h3>
@@ -126,12 +122,12 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-gray-50">
+      <section className="bg-gray-50 py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
             ¿Por qué elegir π Pascal?
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid gap-6 md:grid-cols-2">
             <div className="flex gap-4">
               <div className="text-3xl flex-shrink-0">🏆</div>
               <div>
@@ -196,7 +192,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-600">
+      <section className="bg-blue-600 py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             ¿Listo para comenzar tu jornada de aprendizaje?

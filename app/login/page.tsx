@@ -34,13 +34,13 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f8f7f3] to-[#dce8ed] py-12 px-4 flex items-center justify-center">
+    <div className="flex min-h-screen items-center justify-center bg-[linear-gradient(135deg,#f8f7f3_0%,#eef3f3_55%,#dce8ed_100%)] px-4 py-12">
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="text-4xl">π</div>
-            <h1 className="text-3xl font-bold text-gray-900">Pascal</h1>
+            <h1 className="text-3xl font-black text-[#082b4f]">Pascal</h1>
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Iniciar sesión</h2>
           <p className="text-gray-600">
@@ -49,7 +49,7 @@ export default function LoginPage() {
         </div>
 
         {/* Card */}
-        <div className="bg-white rounded-lg shadow-lg p-8">
+        <div className="site-panel p-8">
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Email */}
             <div>
@@ -63,7 +63,7 @@ export default function LoginPage() {
                 value={formState.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="site-input"
                 placeholder="tu@email.com"
               />
             </div>
@@ -76,7 +76,7 @@ export default function LoginPage() {
                 </label>
                 <Link
                   href="/recuperar-contraseña"
-                  className="text-sm text-blue-600 hover:text-blue-700"
+                  className="site-link text-sm"
                 >
                   ¿Olvidaste tu contraseña?
                 </Link>
@@ -89,7 +89,7 @@ export default function LoginPage() {
                   value={formState.password}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  className="site-input"
                   placeholder="Tu contraseña"
                 />
                 <button
@@ -143,13 +143,13 @@ export default function LoginPage() {
           <div className="space-y-2">
             <button
               type="button"
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#c8d8dc] px-4 py-2.5 font-semibold text-[#082b4f] transition-colors hover:bg-[#eef3f3]"
             >
               <span>🔵</span> Google
             </button>
             <button
               type="button"
-              className="w-full px-4 py-2.5 border border-gray-300 rounded-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#c8d8dc] px-4 py-2.5 font-semibold text-[#082b4f] transition-colors hover:bg-[#eef3f3]"
             >
               <span>🤖</span> GitHub
             </button>
@@ -158,13 +158,13 @@ export default function LoginPage() {
           {/* Footer */}
           <p className="text-center text-gray-600 mt-6">
             ¿No tienes cuenta?{' '}
-            <Link href="/registro" className="text-blue-600 hover:text-blue-700 font-semibold">
+            <Link href="/registro" className="site-link">
               Regístrate ahora
             </Link>
           </p>
 
           {/* Info Box */}
-          <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+          <div className="mt-6 rounded-xl border border-[#c8d8dc] bg-[#eef3f3] p-4">
             <p className="text-xs text-blue-900">
               <span className="font-semibold">Cuenta de demostración:</span> Usa cualquier email y contraseña para probarlo en modo demo.
             </p>

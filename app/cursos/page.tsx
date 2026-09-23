@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react';
 import { MOCK_COURSES, CourseCategories, CourseLevels } from '@/constants';
 import { CourseCard } from '@/components/ui/CourseCard';
 import { Button } from '@/components/ui/Button';
+import { PageHero } from '@/components/layout';
 
 export default function CoursesPage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -25,19 +26,14 @@ export default function CoursesPage() {
 
   return (
     <>
-      {/* Header Section */}
-      <section className="bg-gradient-to-r from-[#123f68] to-[#082b4f] text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">Nuestros Cursos</h1>
-          <p className="text-xl text-blue-100">
-            Elige entre {MOCK_COURSES.length}+ cursos especializados en diversas áreas y niveles. Aprende a tu propio ritmo y mejora tus habilidades con nuestros cursos diseñados para estudiantes de todas las edades.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Nuestros cursos"
+        description={`Elige entre ${MOCK_COURSES.length}+ cursos especializados en diversas áreas y niveles. Aprende a tu ritmo con contenido claro y práctico.`}
+      />
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <div className="grid gap-6 lg:grid-cols-4">
           {/* Sidebar - Filters */}
           <aside className="lg:col-span-1">
             <div className="sticky top-24 space-y-6">
@@ -51,7 +47,7 @@ export default function CoursesPage() {
                   placeholder="Buscar cursos..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="site-input"
                 />
               </div>
 
@@ -143,13 +139,13 @@ export default function CoursesPage() {
             </div>
 
             {filteredCourses.length > 0 ? (
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {filteredCourses.map((course) => (
                   <CourseCard key={course.id} course={course} />
                 ))}
               </div>
             ) : (
-              <div className="bg-gray-50 rounded-lg p-12 text-center">
+              <div className="site-panel p-12 text-center">
                 <p className="text-gray-600 text-lg mb-4">
                   No se encontraron cursos que coincidan con tu búsqueda.
                 </p>

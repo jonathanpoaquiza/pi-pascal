@@ -1,9 +1,9 @@
 export default function TermsPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-8">Términos de Servicio</h1>
       
-      <div className="prose prose-lg max-w-none space-y-8 text-gray-700">
+      <div className="site-panel max-w-none space-y-8 p-6 text-gray-700 sm:p-10">
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Aceptación de Términos</h2>
           <p>

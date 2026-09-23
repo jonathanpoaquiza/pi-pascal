@@ -8,15 +8,15 @@ import { SITE_NAME, SITE_DESCRIPTION } from '@/constants';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} - Refuerzo académico`,
+  title: `${SITE_NAME}`,
   description: SITE_DESCRIPTION,
   keywords: ['refuerzo académico', 'matemáticas', 'ciencias', 'sociales', 'educación', 'online'],
   authors: [{ name: 'π Pascal' }],
   creator: 'π Pascal',
   icons: {
-    icon: '/images/logo.png',
-    shortcut: '/images/logo.png',
-    apple: '/images/logo.png',
+    icon: '/images/icon.png',
+    shortcut: '/images/icon.png',
+    apple: '/images/icon.png',
   },
   openGraph: {
     type: 'website',

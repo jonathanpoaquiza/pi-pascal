@@ -14,7 +14,7 @@ export function CourseCard({ course }: CourseCardProps) {
     <Link href={`/cursos/${slugify(course.title)}`}>
       <div className="bg-white rounded-xl shadow-[0_8px_30px_rgba(8,43,79,0.08)] hover:shadow-[0_14px_35px_rgba(8,43,79,0.14)] transition-shadow h-full overflow-hidden group border border-[#e4e8e7]">
         {/* Image */}
-        <div className="relative h-48 overflow-hidden bg-gray-200">
+        <div className="relative h-48 overflow-hidden bg-[#dce8ed]">
           <Image
             src={course.image}
             alt={course.title}
@@ -31,7 +31,7 @@ export function CourseCard({ course }: CourseCardProps) {
         {/* Content */}
         <div className="p-4">
           {/* Category */}
-          <p className="text-sm text-gray-500 mb-2 uppercase tracking-wide">
+          <p className="mb-2 text-sm uppercase tracking-wide text-[#b08a15]">
             {course.category}
           </p>
 
@@ -41,17 +41,17 @@ export function CourseCard({ course }: CourseCardProps) {
           </h3>
 
           {/* Description */}
-          <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+          <p className="mb-4 line-clamp-2 text-sm text-slate-600">
             {course.shortDescription || course.description}
           </p>
 
           {/* Instructor */}
-          <p className="text-sm text-gray-600 mb-3">
+          <p className="mb-3 text-sm text-slate-600">
             <span className="font-semibold">Por:</span> {course.instructor}
           </p>
 
           {/* Stats */}
-          <div className="flex items-center justify-between text-sm text-gray-600 mb-4 pb-4 border-b">
+          <div className="mb-4 flex items-center justify-between border-b border-[#d8dfdf] pb-4 text-sm text-slate-600">
             <span>{course.duration}</span>
             {course.rating && (
               <div className="flex items-center">

@@ -71,3 +71,31 @@ img {
 ::selection {
   background: rgba(244, 197, 66, 0.35);
 }
+
+.site-input {
+  width: 100%;
+  border: 1px solid #c8d8dc;
+  border-radius: 0.75rem;
+  background: #fff;
+  color: #082b4f;
+  padding: 0.7rem 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.site-input::placeholder { color: #8294a0; }
+.site-input:focus { border-color: #b08a15; box-shadow: 0 0 0 3px rgba(242, 194, 48, 0.25); }
+.site-panel { border: 1px solid #d8dfdf; border-radius: 1rem; background: #fff; box-shadow: 0 8px 30px rgba(8, 43, 79, 0.08); }
+.site-link { color: #123f68; font-weight: 600; transition: color 0.2s ease; }
+.site-link:hover { color: #b08a15; }
+
+/* Bring legacy page utilities into the Home palette. */
+.bg-gray-50 { background-color: #eef3f3 !important; }
+.bg-gray-100 { background-color: #f8fafc !important; }
+.bg-gray-200 { background-color: #dce8ed !important; }
+.bg-gray-900 { background-color: #082b4f !important; }
+.text-gray-900 { color: #0a2340 !important; }
+.text-gray-700 { color: #31516b !important; }
+.text-gray-600 { color: #5e7484 !important; }
+.text-gray-500 { color: #718795 !important; }
+.border-gray-200, .border-gray-300 { border-color: #d8dfdf !important; }

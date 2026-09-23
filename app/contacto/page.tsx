@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/Button';
+import { PageHero } from '@/components/layout';
 import { useState } from 'react';
 
 export default function ContactPage() {
@@ -48,19 +49,14 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* Header Section */}
-      <section className="bg-gradient-to-r from-[#123f68] to-[#082b4f] text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">Contacto</h1>
-          <p className="text-xl text-blue-100">
-            ¿Tienes preguntas? Nos encantaría escucharte. Contáctanos hoy mismo.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Contacto"
+        description="¿Tienes preguntas? Nos encantaría escucharte. Contáctanos hoy mismo."
+      />
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+      <div className="max-w-7xl mx-auto px-4 py-14 sm:px-6 lg:px-8">
+        <div className="mb-12 grid gap-6 md:grid-cols-3">
           {/* Contact Info */}
           <div className="md:col-span-1">
             <h2 className="text-2xl font-bold text-gray-900 mb-8">Formas de contactarnos</h2>
@@ -146,7 +142,7 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="md:col-span-2">
-            <div className="bg-gray-50 rounded-lg p-8">
+            <div className="site-panel p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Envíanos un mensaje</h2>
 
               {submitted && (
@@ -173,7 +169,7 @@ export default function ContactPage() {
                     value={formState.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    className="site-input"
                     placeholder="Tu nombre completo"
                   />
                 </div>
@@ -190,7 +186,7 @@ export default function ContactPage() {
                     value={formState.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    className="site-input"
                     placeholder="tu@email.com"
                   />
                 </div>
@@ -207,7 +203,7 @@ export default function ContactPage() {
                     value={formState.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    className="site-input"
                     placeholder="Asunto de tu mensaje"
                   />
                 </div>
@@ -224,7 +220,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent resize-none"
+                    className="site-input resize-none"
                     placeholder="Cuéntanos más sobre tu consulta..."
                   />
                 </div>
@@ -269,11 +265,11 @@ export default function ContactPage() {
             Preguntas frecuentes sobre contacto
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid gap-6 md:grid-cols-2">
             <div>
               <h3 className="font-semibold text-gray-900 mb-2">¿Cuál es el horario de atención?</h3>
               <p className="text-gray-700">
-                Nuestro equipo está disponible de lunes a viernes de 9:00 a 18:00 EDT. Los mensajes enviados fuera de este horario serán respondidos al día siguiente.
+                Nuestro equipo está disponible de lunes a viernes de 9:00 a 18:00. Los mensajes enviados fuera de este horario serán respondidos al día siguiente.
               </p>
             </div>
 
