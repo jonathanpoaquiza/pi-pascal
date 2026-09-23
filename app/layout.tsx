@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Header, Footer } from '@/components/layout';
+import { AIChatBubble } from '@/components/ai/AIChatBubble';
 import { SITE_NAME, SITE_DESCRIPTION } from '@/constants';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <AIChatBubble />
       </body>
     </html>
   );
