@@ -32,7 +32,7 @@ export default function Home() {
       `}</style>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0a2340] via-[#082b4f] to-[#123f68] pb-24 pt-20 text-white">
+      <section className="relative overflow-hidden bg-[#0a2340] pb-24 pt-20 text-white">
         <div className="pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-[#f2c230]/10 blur-[100px]" />
         <div className="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-[#f2c230]/[0.06] blur-[90px]" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 md:grid-cols-[1.1fr_0.9fr] md:items-center lg:px-8">
@@ -133,29 +133,18 @@ export default function Home() {
           </h2>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {FEATURES.map((feature, index) => {
-              const highlighted = index === 0;
-              return (
-                <div
-                  key={index}
-                  className={`rounded-2xl p-8 shadow-sm transition-shadow hover:shadow-lg ${
-                    highlighted ? 'bg-[#082b4f] text-white' : 'border border-slate-100 bg-white'
-                  }`}
-                >
-                  <div
-                    className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl text-2xl ${
-                      highlighted ? 'bg-white/10' : 'bg-[#0a2340]/5'
-                    }`}
-                  >
-                    {feature.icon}
-                  </div>
-                  <h3 className={`mb-2 text-xl font-bold ${highlighted ? 'text-white' : 'text-[#0a2340]'}`}>
-                    {feature.title}
-                  </h3>
-                  <p className={highlighted ? 'text-[#c9d6e0]' : 'text-slate-600'}>{feature.description}</p>
+            {FEATURES.map((feature, index) => (
+              <div
+                key={index}
+                className="rounded-2xl border border-slate-100 bg-white p-8 text-[#0a2340] shadow-sm transition-shadow hover:shadow-lg"
+              >
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#0a2340]/5 text-2xl">
+                  {feature.icon}
                 </div>
-              );
-            })}
+                <h3 className="mb-2 text-xl font-bold text-[#0a2340]">{feature.title}</h3>
+                <p className="text-slate-600">{feature.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

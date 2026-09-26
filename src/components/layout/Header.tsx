@@ -19,12 +19,12 @@ export function Header() {
     <>
       {/* Spacer: ocupa el espacio del header en el flujo, pintado de azul marino.
           Nunca se ve blanco detrás del header, tenga o no imagen de fondo la página. */}
-      <div className="h-20 md:h-32 bg-[#04101f]" aria-hidden="true" />
+      <div className="h-20 md:h-32 bg-[#0a2340]" aria-hidden="true" />
 
       <header className={`${jakarta.className} fixed inset-x-0 top-0 z-50`}>
         {/* Degradado suave: oscuro arriba -> transparente abajo */}
         <div
-          className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(4,16,31,0.92)_0%,rgba(4,16,31,0.78)_30%,rgba(4,16,31,0.5)_55%,rgba(4,16,31,0.22)_75%,rgba(4,16,31,0)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(10,35,64,0.92)_0%,rgba(10,35,64,0.78)_30%,rgba(10,35,64,0.5)_55%,rgba(10,35,64,0.22)_75%,rgba(10,35,64,0)_100%)]"
           aria-hidden="true"
         />
 
@@ -117,7 +117,7 @@ export function Header() {
 
           {/* Mobile Navigation */}
           {isOpen && (
-            <div className="md:hidden pb-4 bg-[#04101f]/95 backdrop-blur-sm rounded-b-lg">
+            <div className="md:hidden pb-4 bg-[#0a2340]/95 backdrop-blur-sm rounded-b-lg">
               <nav className="flex flex-col space-y-1 pt-2">
                 {NAVIGATION_LINKS.map((link) => (
                   <Link
