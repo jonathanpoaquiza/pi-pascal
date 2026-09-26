@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'π Pascal' }],
   creator: 'π Pascal',
   icons: {
-    icon: '/images/icon.png',
-    shortcut: '/images/icon.png',
-    apple: '/images/icon.png',
+    icon: '/images/logo2.png',
+    shortcut: '/images/logo2.png',
+    apple: '/images/logo2.png',
   },
   openGraph: {
     type: 'website',
