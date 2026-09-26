@@ -1,8 +1,8 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { SITE_NAME } from '@/constants';
+import { FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,7 +12,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
 
-          {/* Cursos */}
+          {/* Áreas */}
           <div>
             <h3 className="text-white font-semibold mb-4 text-base">Áreas</h3>
             <ul className="space-y-2 text-sm">
@@ -80,31 +80,41 @@ export function Footer() {
                   +593 999043294
                 </a>
               </li>
-              <li>
-                <div className="flex space-x-4 mt-4">
-                  <a
-                    href="https://www.instagram.com/p4sc4l_pi/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-slate-300 hover:text-[#f4c542] transition-colors"
-                  >
-                    <span className="sr-only">Instagram</span>
-                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm9.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" />
-                    </svg>
-                  </a>
-                  <a
-                    href="https://www.tiktok.com/@pi_pascal.oficial"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-slate-300 hover:text-[#f4c542] transition-colors"
-                  >
-                    <span className="sr-only">TikTok</span>
-                    <span className="text-sm font-black" aria-hidden="true">TikTok</span>
-                  </a>
-                </div>
-              </li>
             </ul>
+          </div>
+
+          {/* Redes sociales */}
+          <div>
+            <h3 className="text-white font-semibold mb-4 text-base">Síguenos</h3>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://www.instagram.com/p4sc4l_pi/"
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="Instagram"
+                className="flex items-center justify-center h-9 w-9 rounded-full bg-white/5 border border-white/10 text-slate-200 hover:bg-[#f4c542] hover:text-[#0a2340] hover:border-[#f4c542] transition-colors"
+              >
+                <FaInstagram size={16} />
+              </a>
+              <a
+                href="https://www.tiktok.com/@pi_pascal.oficial"
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="TikTok"
+                className="flex items-center justify-center h-9 w-9 rounded-full bg-white/5 border border-white/10 text-slate-200 hover:bg-[#f4c542] hover:text-[#0a2340] hover:border-[#f4c542] transition-colors"
+              >
+                <FaTiktok size={16} />
+              </a>
+              <a
+                href="https://wa.me/593999043294"
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="WhatsApp"
+                className="flex items-center justify-center h-9 w-9 rounded-full bg-white/5 border border-white/10 text-slate-200 hover:bg-[#f4c542] hover:text-[#0a2340] hover:border-[#f4c542] transition-colors"
+              >
+                <FaWhatsapp size={16} />
+              </a>
+            </div>
           </div>
         </div>
 
